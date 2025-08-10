@@ -133,11 +133,19 @@ body {
     padding: 0.75rem;
     vertical-align: middle;
     border-top: 1px solid #f1f1f1;
-    white-space: nowrap;
 }
 
 .table-hover tbody tr:hover {
     background-color: rgba(0, 123, 255, 0.05);
+}
+/* Mencegah wrap untuk kolom Tanggal, Waktu, Group */
+#matchTable th:nth-child(1), /* Tanggal */
+#matchTable th:nth-child(2), /* Waktu */
+#matchTable th:nth-child(3), /* Group */
+#matchTable td:nth-child(1),
+#matchTable td:nth-child(2),
+#matchTable td:nth-child(3) {
+    white-space: nowrap;
 }
 
 /* Accordion Styles */
@@ -326,3 +334,4 @@ footer h5 {
     }
 
 }
+
