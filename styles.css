@@ -1,0 +1,326 @@
+/* Modern CSS with mobile support */
+:root {
+    --primary-color: #1e3c72;
+    --secondary-color: #2a5298;
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.soccer-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.soccer-header h1 {
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.soccer-header h2 {
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 1.25rem;
+}
+
+.tournament-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+.soccer-ball {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.soccer-ball .bi-circle-fill {
+    font-size: 40px;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.soccer-ball .bi-pentagon {
+    font-size: 34px;
+    color: black;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    opacity: 0.2;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    font-weight: 600;
+    border-bottom: none;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+}
+
+.card-header.bg-primary {
+    background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+}
+
+.card-header.bg-success {
+    background: linear-gradient(135deg, #0cebeb 0%, #20e3b2 50%, #29ffc6 100%);
+    color: #333;
+}
+
+.card-header.bg-warning {
+    background: linear-gradient(135deg, #f5af19 0%, #f12711 100%);
+}
+
+.card-header.bg-info {
+    background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+}
+
+.card-header.bg-danger {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+.table th {
+    font-weight: 600;
+    padding: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table td {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border-top: 1px solid #f1f1f1;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* Accordion Styles */
+.accordion-button {
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: rgba(13, 110, 253, 0.05);
+    color: var(--primary-color);
+    box-shadow: none;
+}
+
+.accordion-body {
+    padding: 0;
+}
+
+/* Badge Styles */
+.badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+    font-size: 0.75em;
+}
+
+.bg-gold {
+    background-color: #ffd700;
+    color: #333;
+}
+
+.bg-silver {
+    background-color: #c0c0c0;
+    color: #333;
+}
+
+.bg-bronze {
+    background-color: #cd7f32;
+    color: #fff;
+}
+
+/* Tournament Info Styles */
+.tournament-info h5 {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.tournament-info p {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.info-item {
+    margin-bottom: 1.5rem;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.time-slots {
+    margin-top: 0.5rem;
+}
+
+.prizes {
+    margin-top: 0.5rem;
+}
+
+.prize-item {
+    padding: 0.5rem 0;
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 2rem 0;
+}
+
+footer h5 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.social-icons a {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+    color: var(--warning-color) !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .soccer-header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .soccer-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .card-header {
+        padding: 0.75rem 1rem;
+    }
+    
+    .table th, 
+    .table td {
+        padding: 0.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .soccer-header {
+        padding: 1rem 0;
+    }
+    
+    .soccer-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .soccer-header h2 {
+        font-size: 1rem;
+    }
+    
+    .soccer-ball {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .soccer-ball .bi-circle-fill {
+        font-size: 30px;
+    }
+    
+    .soccer-ball .bi-pentagon {
+        font-size: 25px;
+        top: 2.5px;
+        left: 2.5px;
+    }
+    
+    .card-header {
+        font-size: 0.9rem;
+    }
+    
+    .table {
+        font-size: 0.8rem;
+    }
+    
+    .table th, 
+    .table td {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .soccer-header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .soccer-header h2 {
+        font-size: 0.9rem;
+    }
+    
+    .tournament-badge {
+        font-size: 0.7rem;
+    }
+    
+    .card-header {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .accordion-button {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+    
+    footer {
+        padding: 1.5rem 0;
+    }
+    
+    footer h5 {
+        font-size: 1rem;
+    }
+}

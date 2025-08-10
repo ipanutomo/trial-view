@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINI SOCCER U-12 RW 10 GRAND PERMATA SEPATAN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero Banner tambahan */
+        .hero-banner {
+            background: url('https://images.unsplash.com/photo-1602786128251-f23d5d9c4d74?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+            position: relative;
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .hero-banner::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(30,60,114,0.85), rgba(42,82,152,0.85));
+        }
+        .hero-content {
+            position: relative;
+            text-align: center;
+            z-index: 2;
+        }
+        .hero-content h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+        }
+        .hero-content h2 {
+            font-weight: 500;
+            font-size: 1.25rem;
+            color: #ffc107;
+        }
+        .hero-badge {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        /* Divider visual */
+        .section-divider {
+            height: 4px;
+            width: 60px;
+            background: var(--primary-color);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid px-0">
+        
+        <!-- HERO BANNER -->
+        <div class="hero-banner">
+            <div class="hero-content">
+                <div class="mb-3">
+                    <i class="bi bi-trophy-fill fs-1 text-warning"></i>
+                </div>
+                <h1>MINI SOCCER U-12</h1>
+                <h2>RW 10 GRAND PERMATA SEPATAN</h2>
+                <div class="hero-badge">Season 2025</div>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <main class="container my-5">
+
+            <!-- Jadwal Pertandingan -->
+            <section class="mb-5">
+                <div class="text-center mb-3">
+                    <h3><i class="bi bi-calendar-event me-2"></i>Jadwal Pertandingan</h3>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <span>Jadwal Lengkap</span>
+                        <span class="badge bg-white text-primary">Live Update</span>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0" id="matchTable">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Tanggal</th>
+                                        <th>Waktu</th>
+                                        <th>Group</th>
+                                        <th colspan="3" class="text-center">Pertandingan</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="matchData"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-light py-2">
+                        <small class="text-muted">Terakhir diperbarui: <span id="lastUpdated"></span></small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Klasemen & Top Scorers -->
+            <div class="row mb-5">
+                <div class="col-lg-6 mb-4">
+                    <div class="text-center mb-3">
+                        <h3><i class="bi bi-trophy me-2"></i>Klasemen Grup</h3>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body p-0">
+                            <div class="accordion" id="groupAccordion"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="text-center mb-3">
+                        <h3><i class="bi bi-star-fill me-2"></i>Top Scorers</h3>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body p-0">
+                            <div class="accordion" id="topScorersAccordion">
+                                <!-- Summary -->
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header" id="headingSummary">
+                                        <button class="accordion-button py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSummary" aria-expanded="true">
+                                            <i class="bi bi-graph-up me-2"></i>Summary Top Scorers
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSummary" class="accordion-collapse collapse show">
+                                        <div class="accordion-body p-0">
+                                            <table class="table table-hover mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Nama</th>
+                                                        <th>Team</th>
+                                                        <th>Total Gol</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="topScorersSummaryData"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Detail -->
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header" id="headingDetail">
+                                        <button class="accordion-button collapsed py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDetail" aria-expanded="false">
+                                            <i class="bi bi-list-ul me-2"></i>Detail Gol
+                                        </button>
+                                    </h2>
+                                    <div id="collapseDetail" class="accordion-collapse collapse">
+                                        <div class="accordion-body p-0">
+                                            <table class="table table-hover mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Tanggal</th>
+                                                        <th>Team</th>
+                                                        <th>Nama</th>
+                                                        <th>Keterangan</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="topScorersDetailData"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Info & Statistik -->
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="text-center mb-3">
+                        <h3><i class="bi bi-info-circle me-2"></i>Informasi Turnamen</h3>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body">
+                            <div class="tournament-info">
+                                <div class="info-item">
+                                    <h5><i class="bi bi-calendar-check me-2"></i>Jadwal Turnamen</h5>
+                                    <p>Setiap Minggu: 07.00 - 10.00 WIB & 15.30 - 17.30 WIB</p>
+                                    <div class="time-slots">
+                                        <span class="badge bg-primary me-1 mb-1">07.00-08.00</span>
+                                        <span class="badge bg-primary me-1 mb-1">08.00-09.00</span>
+                                        <span class="badge bg-primary me-1 mb-1">09.00-10.00</span>
+                                        <span class="badge bg-primary me-1 mb-1">15.30-16.30</span>
+                                        <span class="badge bg-primary mb-1">16.30-17.30</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <h5><i class="bi bi-people me-2"></i>Peserta</h5>
+                                    <p>Perwakilan RT di lingkungan RW 10 Grand Permata Sepatan</p>
+                                </div>
+                                <div class="info-item">
+                                    <h5><i class="bi bi-award me-2"></i>Hadiah</h5>
+                                    <div class="prizes">
+                                        <div class="prize-item d-flex align-items-center">
+                                            <span class="badge bg-gold me-2">1</span>
+                                            <span>Piala + Uang Pembinaan</span>
+                                        </div>
+                                        <div class="prize-item d-flex align-items-center">
+                                            <span class="badge bg-silver me-2">2</span>
+                                            <span>Piala + Uang Pembinaan</span>
+                                        </div>
+                                        <div class="prize-item d-flex align-items-center">
+                                            <span class="badge bg-bronze me-2">3</span>
+                                            <span>Piala + Uang Pembinaan</span>
+                                        </div>
+                                        <div class="prize-item d-flex align-items-center">
+                                            <span class="badge bg-secondary me-2">4</span>
+                                            <span>Uang Pembinaan</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistik Tim -->
+                <div class="col-lg-6 mb-4">
+                    <div class="text-center mb-3">
+                        <h3><i class="bi bi-bar-chart-line me-2"></i>Statistik Tim</h3>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body p-0">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://lookerstudio.google.com/embed/reporting/5d8cda26-d1b0-4a98-b2c0-7de2f3f67beb/page/6czRF" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <h5>MINI SOCCER U-12</h5>
+                        <p class="mb-0">RW 10 Grand Permata Sepatan<br>Season 2025</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                        <h5>Follow Us</h5>
+                        <div class="social-icons">
+                            <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+                            <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
+                            <a href="#" class="text-white"><i class="bi bi-whatsapp fs-5"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-3">
+                <div class="text-center small">
+                    &copy; 2025 MINI SOCCER U-12 by RT 08 RW 10 GRAND PERMATA SEPATAN. All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
