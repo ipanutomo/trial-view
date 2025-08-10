@@ -133,6 +133,7 @@ body {
     padding: 0.75rem;
     vertical-align: middle;
     border-top: 1px solid #f1f1f1;
+    white-space: nowrap;
 }
 
 .table-hover tbody tr:hover {
@@ -323,4 +324,5 @@ footer h5 {
     footer h5 {
         font-size: 1rem;
     }
+
 }
